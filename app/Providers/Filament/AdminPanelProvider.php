@@ -40,6 +40,8 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
+                 \App\Filament\Widgets\OverviewWidget::class,
+
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -53,7 +55,8 @@ class AdminPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                Authenticate::class,
+    'filament.role',
             ]);
+
     }
 }

@@ -9,7 +9,11 @@ class FilamentRoleMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        if (!auth()->check() || !auth()->user()->hasAnyRole(['admin', 'teacher'])) {
+        // dd(auth()->user());
+      if (!auth()->check()) {
+    return redirect()->route('filament.admin.auth.login');
+        }
+     if (!in_array(auth()->user()->role, ['student', 'teacher'])) {
             abort(403);
         }
 

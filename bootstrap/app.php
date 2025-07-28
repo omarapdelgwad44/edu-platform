@@ -12,6 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
 
+            $middleware->alias([
+        'filament.role' => \App\Http\Middleware\FilamentRoleMiddleware::class,
+    ]);
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

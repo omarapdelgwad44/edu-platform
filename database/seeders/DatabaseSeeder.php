@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,7 +20,9 @@ class DatabaseSeeder extends Seeder
     'name' => 'Test User',
     'email' => 'damin@admin.com',
     'password' => bcrypt('123456'),
+    
 ]);
-
+Role::create(['name' => 'student']);
+Role::create(['name' => 'teacher']);
     }
 }
