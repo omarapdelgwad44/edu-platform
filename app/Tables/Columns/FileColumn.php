@@ -16,6 +16,13 @@ class FileColumn extends Column
         $this->disk = $disk;
         return $this;
     }
+    public function getViewData(): array
+    {
+        return array_merge(parent::getViewData(), [
+            'disk' => $this->getDisk(),
+            'directory' => $this->getDirectory(),
+        ]);
+    }
 
     public function directory(string $directory): static
     {
