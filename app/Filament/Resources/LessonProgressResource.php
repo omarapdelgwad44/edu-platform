@@ -26,7 +26,7 @@ class LessonProgressResource extends Resource
 {
     protected static ?string $model = LessonProgress::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-check-circle';
 
     public static function form(Form $form): Form
     {

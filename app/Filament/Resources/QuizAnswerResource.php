@@ -22,7 +22,7 @@ class QuizAnswerResource extends Resource
 {
     protected static ?string $model = QuizAnswer::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-right';
 
     public static function form(Form $form): Form
     {
