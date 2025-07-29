@@ -11,12 +11,12 @@
     {{-- 📊 كروت الإحصائيات --}}
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         <div class="bg-white p-6 rounded-xl shadow text-center">
-            <div class="text-4xl font-bold text-indigo-700">{{ \App\Models\User::role('teacher')->count() }}</div>
+            <div class="text-4xl font-bold text-indigo-700">{{ \App\Models\User::where('role','teacher')->count() }}</div>
             <div class="mt-2 text-gray-600 font-medium">عدد المعلمين</div>
         </div>
 
         <div class="bg-white p-6 rounded-xl shadow text-center">
-            <div class="text-4xl font-bold text-green-600">{{ \App\Models\User::role('student')->count() }}</div>
+            <div class="text-4xl font-bold text-green-600">{{ \App\Models\User::where('role','student')->count() }}</div>
             <div class="mt-2 text-gray-600 font-medium">عدد الطلاب</div>
         </div>
 
